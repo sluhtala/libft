@@ -65,7 +65,8 @@ CFILES= ft_atoi.c\
 	ft_strtoupper.c\
 	ft_strtolower.c\
 	ft_realloc.c\
-	ft_pow.c
+	ft_pow.c\
+	get_next_line.c
 PATHCFILES=$(addprefix $(SRC)/,$(CFILES))
 OFILES = $(CFILES:.c=.o)
 INCLUDES = include
