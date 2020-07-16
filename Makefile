@@ -66,9 +66,35 @@ CFILES= ft_atoi.c\
 	ft_strtolower.c\
 	ft_realloc.c\
 	ft_pow.c\
-	get_next_line.c
-PATHCFILES=$(addprefix $(SRC)/,$(CFILES))
-OFILES = $(CFILES:.c=.o)
+	get_next_line.c\
+
+PFDIR = ft_printf
+PFFILES= create_list.c\
+	error_manager.c\
+	free_list.c\
+	ft_printf.c\
+	initialize_pf.c\
+	is_fspecif.c\
+	get_data.c\
+	ft_itoa_u.c\
+	ft_itoa_l.c\
+	ft_itoa_ul.c\
+	number_manager.c\
+	ft_itoa_base.c\
+	ft_itoa_base_ll.c\
+	hex_manager.c\
+	save_float.c\
+	save_ldouble.c\
+	float_manager.c\
+	get_valid_flags.c\
+	apply_flags.c\
+	is_hex.c\
+	apply_preci.c
+PCFILES=$(addprefix $(SRC)/,$(CFILES)) 
+PPRINTF = $(addprefix $(PFDIR)/, $(PFFILES))
+PRINTF = $(addprefix $(SRC)/, $(PPRINTF))
+OFILES = $(CFILES:.c=.o) $(PFFILES:.c=.o)
+PATHCFILES=$(PCFILES) $(PRINTF)
 INCLUDES = include
 all: $(NAME)
 
